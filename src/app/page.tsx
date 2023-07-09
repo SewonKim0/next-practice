@@ -6,20 +6,23 @@ import axios from "axios"
 
 export default function Home() {
   // state: test
-  const [test, setTest] = useState(undefined)
+  const [text, setText] = useState(undefined)
   // effect: fetch test
   useEffect(() => {
     // setup connection
     let connection = axios.create({ baseURL: "" })
     
     // TEST
-    connection.get("/api")
+    connection.post("/api")
       .then((res) => {
-        alert("RECEIVED")
+        console.log("RECEIVED: ")
+        console.log(res.data)
       })
   }, [])
 
   return (
-    <h1> Hello World </h1>
+    <div className={styles.container}>
+      <textarea className={styles.doc}></textarea>
+    </div>
   )
 }

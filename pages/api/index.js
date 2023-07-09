@@ -1,12 +1,9 @@
 export default function handler(req, res) {
-    switch (req.method) {
-        case "GET":
-            console.log("GET")
-            res.status(200)
-            res.json({"success": "success"})
-        case "POST":
-            console.log("POST")
-            res.status(200)
-            res.json({"success": "success"})
+    if (req.method === "GET") {
+        res.status(200)
+        res.send("GET")
+    } else if (req.method === "POST") {
+        res.status(200)
+        res.send("POST")
     }
 }
