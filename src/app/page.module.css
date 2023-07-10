@@ -1,8 +1,14 @@
+/* Container */
 .container {
   width: 90%;
   height: 30rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Doc */
 .doc {
   color: white;
   background-color: black;
@@ -12,4 +18,13 @@
   height: 90%;
   margin-top: 5%;
   padding: 0;
+}
+
+/* Save Button */
+.save-button {
+  border-color: white;
+  background-color: black;
+  color: white;
+
+  margin-top: 1rem;
 }

@@ -3,15 +3,16 @@
 import styles from './page.module.css'
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { MongoClient } from "mongodb"
 
 export default function Home() {
-  // state: test
+  // axios: setup connection
+  let connection = axios.create({ baseURL: "" })
+
+  // state: text
   const [text, setText] = useState(undefined)
-  // effect: fetch test
+  // effect: get text
   useEffect(() => {
-    // setup connection
-    let connection = axios.create({ baseURL: "" })
-    
     // TEST
     connection.post("/api")
       .then((res) => {
@@ -22,7 +23,20 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <textarea className={styles.doc}></textarea>
+      {/* Doc */}
+      <textarea className={styles.doc}>
+        {text === undefined ? "" : text}
+      </textarea>
+
+      {/* Save Button */}
+      <button
+        className={styles["save-button"]}
+        onClick={() => {
+          // save doc text
+        }}  
+      >
+        Save
+      </button>
     </div>
   )
 }
