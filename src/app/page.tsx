@@ -24,8 +24,9 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {/* Doc */}
-      <textarea className={styles.doc}>
-        {text === undefined ? "" : text}
+      <textarea 
+        className={styles.doc}
+        defaultValue={text === undefined ? "" : text}>
       </textarea>
 
       {/* Save Button */}
