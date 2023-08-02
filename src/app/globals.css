@@ -8,6 +8,13 @@
   src: url("./../../public/Inter-Light.ttf");
 }
 
+/* All */
+* {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
 /* Main Containers */
 body {
   font-family: inter, sans-serif;
