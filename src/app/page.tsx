@@ -1,7 +1,6 @@
 "use client"
 
 import styles from './page.module.css'
-import Block from "./(Block)/Block"
 import { useEffect, useState } from "react"
 
 export default function Home() {
