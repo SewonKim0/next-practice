@@ -1,0 +1,132 @@
+/* Footer */
+div.footer {
+    background-color: var(--color1);
+    width: 100%;
+    height: 5em;
+
+    position: sticky;
+    bottom: 0em;
+    margin-top: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Controls Container */
+div.controls-container {
+    width: 90%;
+    height: 3em;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Controls Container Inner */
+div.controls-container > div {
+    width: 20%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Play Button */
+.play {
+    color: white;
+    width: 3em;
+    height: 3em;
+}
+.play:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+.play:active {
+    color: white;
+}
+
+/* Left Button */
+.left {
+    color: white;
+    width: 2em;
+    height: 2em;
+}
+.left:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+.left:active {
+    color: white;
+}
+
+/* Right Button */
+.right {
+    color: white;
+    width: 2em;
+    height: 2em;
+}
+.right:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+.right:active {
+    color: white;
+}
+
+/* Album 5 Button Container */
+a.album {
+    position: absolute;
+    left: 0;
+}
+/* Album 5 Button */
+a.album > button {
+    background-color: rgba(255, 255, 255, 0);
+    font-family: inter, sans-serif;
+    font-size: 1em;
+    color: white;
+    border: 2px solid white;
+
+    padding: 0.2em;
+}
+a.album > button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+a.album > button:active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Back Button Container */
+a.back {
+    width: 2em;
+    height: 2em;
+    color: white;
+
+    position: absolute;
+    right: 0;
+}
+a.back:hover {
+    color: lightblue;
+}
+a.back:active {
+    color: white;
+}
+/* Back Button */
+a.back > * {
+    width: 100%;
+    height: 100%;
+}
+
+/* Progress Bar */
+div.footer > input {
+    width: 30%;
+}
+
+/* Media Query: Desktop Layout */
+@media (min-width: 600px) {
+    /* Footer: Squeeze controls to middle */
+    div.controls-container {
+        width: 70%;
+    }
+}

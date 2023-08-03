@@ -10,19 +10,9 @@ interface VideoType {
 }
 
 export default function Home() {
-  const [getRes, setGetRes] = useState<string | null>(null)
   const [postRes, setPostRes] = useState<VideoType | null>(null)
 
   useEffect(() => {
-    fetch("/api", { method: "GET" })
-      .then((res) => {
-        console.log("GET: " + res.status)
-        return res.text()
-      })
-      .then((text) => {
-        setGetRes(text)
-      })
-
     fetch("/api", { method: "POST", body: "winter-snow" })
       .then((res) => {
         console.log("POST: " + res.status)

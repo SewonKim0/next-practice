@@ -1,0 +1,26 @@
+/* Variables */
+:root {
+    --color1: #000000;
+    --color2: #232323;
+    --color3: #666666;
+}
+
+/* Fonts */
+@font-face {
+    font-family: inter;
+    src: url("/Inter-Light.ttf");
+}
+
+/* General: Default layout */
+* {
+    margin: 0em;
+    padding: 0em;
+    font-family: inter, sans-serif;
+}
+
+/* General: Main Containers */
+body {
+    background-color: #141414;
+    color: white;
+    font-family: inter, sans-serif;
+}
