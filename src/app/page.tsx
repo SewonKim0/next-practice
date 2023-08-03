@@ -24,9 +24,6 @@ export default function Home() {
   }, [])
 
   return <div>
-    {getRes === null ? <p> Loading... </p> :
-    <p> GET: {getRes} </p>}
-
     {postRes === null ? <p> Loading... </p> :
     <p> POST: {postRes.title} </p>}
   </div>
