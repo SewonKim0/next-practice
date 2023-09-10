@@ -3,17 +3,17 @@
 import styles from './page.module.css'
 import { useEffect, useState } from "react"
 
-interface VideoType {
-  "title": string;
-  "composer": string;
-  "imgPath": string;
+interface PersonType {
+  "name": string;
+  "age": number;
 }
 
 export default function Home() {
-  const [postRes, setPostRes] = useState<VideoType | null>(null)
+  const [postRes, setPostRes] = useState<PersonType | null>(null)
 
   useEffect(() => {
-    fetch("/api", { method: "POST", body: "winter-snow" })
+    setTimeout(() => {
+      fetch("/api", { method: "POST", body: "sewonkim" })
       .then((res) => {
         console.log("POST: " + res.status)
         return res.json()
@@ -21,10 +21,11 @@ export default function Home() {
       .then((json) => {
         setPostRes(json)
       })
+    }, 3000)
   }, [])
 
   return <div>
     {postRes === null ? <p> Loading... </p> :
-    <p> POST: {postRes.title} </p>}
+    <p> POST: {postRes.age} </p>}
   </div>
 }
