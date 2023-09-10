@@ -1,13 +1,13 @@
-import { createClient } from "edgedb"
+import * as edgedb from "edgedb"
 
-let client
-
-(async () => {
-    client = await createClient()
-})();
+const client = edgedb.createClient()
 
 export default async function handler(req, res) {
-    client.query(`select 2 + 2`)
-
-    res.send({})
+    const person = await client.query(`
+    select Person {
+        name,
+        age
+    }
+    `)
+    res.send(person)
 }

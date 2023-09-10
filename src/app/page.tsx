@@ -9,11 +9,10 @@ interface PersonType {
 }
 
 export default function Home() {
-  const [postRes, setPostRes] = useState<PersonType | null>(null)
+  const [postRes, setPostRes] = useState<PersonType[] | null>(null)
 
   useEffect(() => {
-    setTimeout(() => {
-      fetch("/api", { method: "POST", body: "sewonkim" })
+    fetch("/api", { method: "POST", body: "sewonkim" })
       .then((res) => {
         console.log("POST: " + res.status)
         return res.json()
@@ -21,11 +20,10 @@ export default function Home() {
       .then((json) => {
         setPostRes(json)
       })
-    }, 3000)
   }, [])
 
   return <div>
     {postRes === null ? <p> Loading... </p> :
-    <p> POST: {postRes.age} </p>}
+    <p> POST: {postRes[0].age} </p>}
   </div>
 }
